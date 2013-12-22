@@ -3,7 +3,11 @@
 
 using System;
 using System.Collections.Generic;
+
+#if !PCL
 using System.Collections.Specialized;
+#endif
+
 using System.IO;
 using ServiceStack.Configuration;
 
@@ -124,6 +128,6 @@ namespace ServiceStack.Web
     }
 }
 
-#if SILVERLIGHT
+#if SILVERLIGHT || PCL
 public class NameValueCollection : Dictionary<string, string> {}
 #endif
