@@ -73,11 +73,11 @@ namespace ServiceStack.Web
         /// </summary>
         Dictionary<string, object> Items { get; }
 
-        NameValueCollection Headers { get; }
+        INameValueCollection Headers { get; }
 
-        NameValueCollection QueryString { get; }
+        INameValueCollection QueryString { get; }
 
-        NameValueCollection FormData { get; }
+        INameValueCollection FormData { get; }
         /// <summary>
         /// Buffer the Request InputStream so it can be re-read
         /// </summary>
@@ -128,6 +128,6 @@ namespace ServiceStack.Web
     }
 }
 
-#if SILVERLIGHT || PCL
+#if SL5
 public class NameValueCollection : Dictionary<string, string> {}
 #endif
